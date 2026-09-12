@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ profile.name }} | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- ================= DEVELOPER BOOT LOADER ================= -->
+
+<div id="developer-loader" class="developer-loader">
+
+    <div class="loader-grid"></div>
+
+    <div class="loader-glow loader-glow-one"></div>
+    <div class="loader-glow loader-glow-two"></div>
+
+    <div class="loader-code code-one">{ }</div>
+    <div class="loader-code code-two">&lt;/&gt;</div>
+    <div class="loader-code code-three">=&gt;</div>
+    <div class="loader-code code-four">def</div>
+    <div class="loader-code code-five">django</div>
+
+    <main class="boot-container">
+
+        <header class="boot-header">
+
+            <div class="boot-brand">
+
+                <div class="brand-mark">
+                    &lt;/&gt;
+                </div>
+
+                <div>
+                    <span class="brand-name">
+                        AMAR SHAHARE
+                    </span>
+
+                    <span class="brand-role">
+                        DEVELOPER PORTFOLIO
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="boot-status">
+
+                <span class="status-dot"></span>
+
+                <span id="boot-status-text">
+                    INITIALIZING
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <section class="boot-main">
+
+            <div class="system-intro">
+
+                <div class="system-label">
+                    <span class="terminal-symbol">&gt;</span>
+                    DEVELOPER PORTFOLIO SYSTEM
+                </div>
+
+                <h1>
+                    SYSTEM
+                    <span>BOOTING</span>
+                    <i class="cursor"></i>
+                </h1>
+
+                <p>
+                    Initializing developer environment
+                    <span class="typing-dots">...</span>
+                </p>
+
+            </div>
+
+
+            <div class="terminal-window">
+
+                <div class="terminal-topbar">
+
+                    <div class="terminal-controls">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="terminal-title">
+                        amar@portfolio: ~
+                    </div>
+
+                    <div class="terminal-language">
+                        PYTHON
+                    </div>
+
+                </div>
+
+                <div class="terminal-body">
+
+                    <div
+                        id="terminal-output"
+                        class="terminal-output"
+                    ></div>
+
+                    <div class="terminal-active-line">
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        <span id="active-command">
+                            booting...
+                        </span>
+
+                        <span class="terminal-cursor"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="architecture">
+
+                <div class="architecture-node active">
+                    <span class="architecture-icon">&lt;/&gt;</span>
+                    <span>FRONTEND</span>
+                </div>
+
+                <div class="architecture-line">
+                    <span></span>
+                </div>
+
+                <div class="architecture-node">
+                    <span class="architecture-icon">{ }</span>
+                    <span>DJANGO</span>
+                </div>
+
+                <div class="architecture-line">
+                    <span></span>
+                </div>
+
+                <div class="architecture-node">
+                    <span class="architecture-icon">▣</span>
+                    <span>DATABASE</span>
+                </div>
+
+                <div class="architecture-line">
+                    <span></span>
+                </div>
+
+                <div class="architecture-node">
+                    <span class="architecture-icon">◈</span>
+                    <span>PORTFOLIO</span>
+                </div>
+
+            </div>
+
+
+            <div class="build-section">
+
+                <div class="build-heading">
+
+                    <span>
+                        BUILDING PORTFOLIO
+                    </span>
+
+                    <span id="progress-percent">
+                        00%
+                    </span>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        id="progress-bar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+                <div class="build-meta">
+
+                    <span id="progress-stage">
+                        SYSTEM INITIALIZATION
+                    </span>
+
+                    <span>
+                        BUILD_ID: AMAR-PORTFOLIO
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div id="system-ready" class="system-ready">
+
+                <div class="ready-line"></div>
+
+                <div class="ready-text">
+
+                    <span>SYSTEM READY</span>
+
+                    <strong>WELCOME, AMAR.</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="boot-footer">
+
+            <span>PYTHON</span>
+            <span>/</span>
+            <span>DJANGO</span>
+            <span>/</span>
+            <span>HTML</span>
+            <span>/</span>
+            <span>CSS</span>
+            <span>/</span>
+            <span>JAVASCRIPT</span>
+
+            <span class="footer-right">
+                v1.0.0
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- ================= END DEVELOPER BOOT LOADER ================= -->
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <h2 class="logo">Amar.</h2>
+
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button id="themeBtn" title="Toggle Dark/Light Mode">
+            🌙
+        </button>
+
+    </nav>
+
+     <!-- DJANGO MESSAGES -->
+    {% if messages %}
+    <div class="django-messages">
+
+        {% for message in messages %}
+
+            <div class="django-message {{ message.tags }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    </div>
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const messages = document.querySelectorAll(".django-message");
+
+    messages.forEach(function (message) {
+
+        setTimeout(function () {
+
+            message.style.opacity = "0";
+            message.style.transform = "translateX(30px)";
+            message.style.transition = "all 0.5s ease";
+
+            setTimeout(function () {
+                message.remove();
+            }, 500);
+
+        }, 10000);
+
+    });
+
+});
+</script>
+
+    <!-- ================= HORIZONTAL PORTFOLIO ================= -->
+
+    <main class="horizontal-wrapper">
+
+        <div class="horizontal-track">
+
+
+            <!-- ================= HOME ================= -->
+
+            <section id="home" class="hero horizontal-section" data-aos="fade-up">
+
+                <div class="content">
+
+                    <h3>Hello 👋 I'm</h3>
+
+                    <h1>{{ profile.name }}</h1>
+
+                    <h2>
+                        I am
+                        <span id="typing" data-title="{{ profile.title }}"></span>
+                    </h2>
+
+                    <p>
+                        Passionate Python learner and future Django Developer.
+                        I love creating beautiful, responsive websites and learning
+                        modern web technologies.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#contact" class="btn">
+                            Hire Me
+                        </a>
+
+                        {% if profile.resume %}
+                            <a href="{{ profile.resume.url }}" class="btn2" download>
+                                Download CV
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="image">
+
+                    {% if profile.profile_image %}
+                        <img src="{{ profile.profile_image.url }}" alt="{{ profile.name }}">
+                    {% endif %}
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ABOUT ================= -->
+
+            <section id="about" class="about horizontal-section" data-aos="fade-right">
+
+                <div class="about-img">
+
+                    {% if profile.about_image %}
+                        <img src="{{ profile.about_image.url }}" alt="{{ profile.name }}">
+                    {% endif %}
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <h2>About Me</h2>
+
+                    <p>
+                        {{ profile.about|linebreaksbr }}
+                    </p>
+
+                    {% if profile.resume %}
+                        <a href="{{ profile.resume.url }}" class="btn2" download>
+                            Download CV
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            </section>
+
+
+           <!-- ================= SKILLS ================= -->
+
+<section id="skills" data-aos="fade-left">
+
+    <h2 class="heading">
+        My Skills
+    </h2>
+
+    <div class="skill">
+
+        {% for skill in skills %}
+
+            <div class="skill-card">
+
+                {% if skill.get_logo %}
+                    <img
+                        src="{{ skill.get_logo }}"
+                        alt="{{ skill.name }} logo"
+                        class="skill-logo"
+                        loading="lazy"
+                    >
+                {% endif %}
+
+                <h3>
+                    {{ skill.name }}
+                </h3>
+
+                {% if skill.description %}
+                    <p>
+                        {{ skill.description }}
+                    </p>
+                {% endif %}
+
+            </div>
+
+        {% empty %}
+
+            <p>No skills added yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" data-aos="fade-up">
+
+    <h2 class="heading">
+        My Projects
+    </h2>
+
+    <div class="projects-container">
+
+        {% for project in projects %}
+
+            <div class="project-card">
+
+                {% if project.image %}
+                    <div class="project-image-wrapper">
+                        <img
+                            src="{{ project.image.url }}"
+                            alt="{{ project.name }}"
+                            class="project-image"
+                            loading="lazy"
+                        >
+                    </div>
+                {% endif %}
+
+
+                <div class="project-content">
+
+                    <h3>
+                        {{ project.name }}
+                    </h3>
+
+                    {% if project.description %}
+                        <p>
+                            {{ project.description }}
+                        </p>
+                    {% endif %}
+
+
+                    {% if project.technologies %}
+                        <div class="project-tech">
+                            {{ project.technologies }}
+                        </div>
+                    {% endif %}
+
+
+                    {% if project.github_link or project.live_link %}
+
+                        <div class="project-buttons">
+
+                            {% if project.github_link %}
+                                <a
+                                    href="{{ project.github_link }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn"
+                                >
+                                    GitHub
+                                </a>
+                            {% endif %}
+
+
+                            {% if project.live_link %}
+                                <a
+                                    href="{{ project.live_link }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-btn"
+                                >
+                                    Live Demo
+                                </a>
+                            {% endif %}
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <p>No projects added yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+            <!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements" data-aos="fade-up">
+
+    <h2 class="heading">
+        My Achievements
+    </h2>
+
+    <div class="achievements-container">
+
+        {% for achievement in achievements %}
+
+            <div class="achievement-card">
+
+                {% if achievement.image %}
+                    <div class="achievement-image-wrapper">
+                        <img
+                            src="{{ achievement.image.url }}"
+                            alt="{{ achievement.title }}"
+                            class="achievement-image"
+                            loading="lazy"
+                        >
+                    </div>
+                {% endif %}
+
+                <div class="achievement-content">
+
+                    <h3>
+                        {{ achievement.title }}
+                    </h3>
+
+                    {% if achievement.date %}
+                        <p class="achievement-date">
+                            📅 {{ achievement.date }}
+                        </p>
+                    {% endif %}
+
+                    {% if achievement.description %}
+                        <p class="achievement-description">
+                            {{ achievement.description }}
+                        </p>
+                    {% endif %}
+
+                    {% if achievement.certificate %}
+                        <a
+                            href="{{ achievement.certificate.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="achievement-btn"
+                        >
+                            📜 View Certificate
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <p class="empty-achievements">
+                No achievements added yet.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+            <!-- ================= CONTACT ================= -->
+
+            <section id="contact" class="contact horizontal-section" data-aos="fade-up">
+
+                <h2 class="heading">
+                    Contact Me
+                </h2>
+
+
+                <form
+                    id="contact-form"
+                    method="POST"
+                    action="{% url 'contact' %}"
+                >
+
+                    {% csrf_token %}
+
+
+                    <input
+                        type="text"
+                        name="from_name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        name="website"
+                        tabindex="-1"
+                        autocomplete="off"
+                        class="honeypot-field"
+                    >
+
+                    <input
+                        type="email"
+                        name="from_email"
+                        placeholder="Your Email"
+                        required
+                    >
+                    
+                    <input
+                        type="text"
+                        name="website"
+                        tabindex="-1"
+                        autocomplete="off"
+                        class="honeypot-field"
+                    >
+
+                    <textarea
+                        name="message"
+                        rows="6"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= FOOTER ================= -->
+
+            <footer class="horizontal-section">
+
+                <p>
+                    © 2026 {{ profile.name }} | All Rights Reserved ❤️
+                </p>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= LIBRARIES ================= -->
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="{% static 'portfolio/js/script.js' %}"></script>
+
+    <!-- Scroll To Top -->
+    <button id="topBtn">
+        ⬆
+    </button>
+
+
+</body>
+
+</html>
