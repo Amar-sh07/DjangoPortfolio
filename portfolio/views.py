@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+import os
+import resend
 
 from .models import Profile, Skill, Project, Achievement, ContactMessage
 
@@ -33,6 +34,7 @@ def contact(request):
         email = request.POST.get("from_email", "").strip()
         message = request.POST.get("message", "").strip()
         website = request.POST.get("website", "").strip()
+
         # ==========================
         # BASIC VALIDATION
         # ==========================
@@ -44,7 +46,6 @@ def contact(request):
             )
             return redirect("home")
 
-        # Name length
         if len(name) < 2 or len(name) > 100:
             messages.error(
                 request,
@@ -52,7 +53,6 @@ def contact(request):
             )
             return redirect("home")
 
-        # Email validation
         try:
             validate_email(email)
         except ValidationError:
@@ -62,7 +62,6 @@ def contact(request):
             )
             return redirect("home")
 
-        # Message length
         if len(message) < 10:
             messages.error(
                 request,
@@ -77,6 +76,7 @@ def contact(request):
             )
             return redirect("home")
 
+        # Honeypot spam protection
         if website:
             return redirect("home")
 
@@ -93,37 +93,41 @@ def contact(request):
             )
 
             # ==========================
-            # SEND EMAIL
+            # SEND EMAIL USING RESEND
             # ==========================
 
-            send_mail(
-                subject=f"New Portfolio Contact Message from {name}",
+            resend.api_key = os.getenv("RESEND_API_KEY")
 
-                message=(
+            if not resend.api_key:
+                raise Exception("RESEND_API_KEY is missing.")
+
+            email_response = resend.Emails.send({
+                "from": "onboarding@resend.dev",
+                "to": ["ashahare637@gmail.com"],
+                "subject": f"New Portfolio Contact Message from {name}",
+                "text": (
                     f"You received a new message from your portfolio.\n\n"
                     f"Name: {name}\n"
                     f"Email: {email}\n\n"
                     f"Message:\n{message}\n"
                 ),
+                "reply_to": email,
+            })
 
-                from_email=None,
-
-                recipient_list=[
-                    "ashahare637@gmail.com"
-                ],
-
-                fail_silently=False,
-            )
+            print("RESEND EMAIL RESPONSE:", email_response)
 
             messages.success(
                 request,
                 "Message sent successfully! 🚀"
             )
 
-        except Exception:
+        except Exception as e:
+
+            print("RESEND EMAIL ERROR:", e)
+
             messages.error(
                 request,
-                "Something went wrong. Please try again."
+                "Message saved, but email could not be sent."
             )
 
         return redirect("home")
